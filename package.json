@@ -1,0 +1,40 @@
+{
+  "name": "datadog-nextjs-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=15"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o dist",
+    "start": "ts-node -O '{ \"module\": \"commonjs\" }' ./server.ts",
+    "uploadSourceMaps": "datadog-ci sourcemaps upload ./dist --release-version 1.0.0 --service rum-test --minified-path-prefix http://localhost:3000/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamj0rd2/datadog-nextjs-repro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamj0rd2/datadog-nextjs-repro/issues"
+  },
+  "homepage": "https://github.com/tamj0rd2/datadog-nextjs-repro#readme",
+  "dependencies": {
+    "@datadog/browser-rum": "^2.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@datadog/datadog-ci": "^0.12.0",
+    "@types/react": "^17.0.5",
+    "express": "^4.17.1",
+    "next": "^10.2.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
