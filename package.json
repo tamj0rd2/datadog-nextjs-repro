@@ -9,7 +9,7 @@
   "engineStrict": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o dist",
+    "build": "rm -rf ./dist && next build && next export -o dist",
     "start": "ts-node -O '{ \"module\": \"commonjs\" }' ./server.ts",
     "uploadSourceMaps": "datadog-ci sourcemaps upload ./dist --release-version 1.0.0 --service rum-test --minified-path-prefix http://localhost:3000/"
   },
